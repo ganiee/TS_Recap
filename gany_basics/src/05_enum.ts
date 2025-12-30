@@ -38,6 +38,14 @@ type Employee = {
     name: string
     salary: number
     position: Position
+    level?: EmployeeLevel
+}
+
+enum EmployeeLevel {
+    Junior = 1,
+    Mid = 2,
+    Senior = 3,
+    Lead = 4,
 }
 
 function payBonus(empl: Employee) {
@@ -71,18 +79,20 @@ function payAnnualBonus(empl: Employee) {
         default:
             break;
     }
-    console.log(`Paying ${empl.salary * bonusPercent} as bonus to ${empl.name}`)
+    console.log(`Paying ${empl.salary * bonusPercent} as bonus to ${empl.name}, with level ${empl.level}`)
 }
 
 const emp1: Employee = {
     name: 'Gany',
     salary: 5000,
-    position: Position.CEO
+    position: Position.CEO,
+    level: EmployeeLevel.Lead
 }
 const emp2: Employee = {
     name: 'John',
     salary: 4000,
-    position: Position.Programmer
+    position: Position.Programmer,
+    level: EmployeeLevel.Junior
 }   
 
 payAnnualBonus(emp1);
