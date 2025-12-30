@@ -5,3 +5,7 @@ npm i -g typescript // global installation
 --
 npm init -y
 npm i -D typescript  //local installation
+
+---
+
+tsc --init <-- this will generate tsconfig.json>
